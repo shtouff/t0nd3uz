@@ -42,6 +42,12 @@ p7 = """2 2
 FF
 """
 
+p8 = """2 2
+1 1 N
+FF
+1 1 E
+FF
+"""
 
 class MowerTestCase(TestCase):
     def test_parser_p1(self):
@@ -91,3 +97,9 @@ class MowerTestCase(TestCase):
             MowerProgramParser(stream=io.StringIO(p7))
 
         self.assertEqual(str(cm.exception), 'initial position for mower #0 can\'t be out of the lawn')
+
+    def test_parser_p8(self):
+        with self.assertRaises(MowerProgramParseError) as cm:
+            MowerProgramParser(stream=io.StringIO(p8))
+
+        self.assertEqual(str(cm.exception), 'initial position for mower #1 collides with another mower')

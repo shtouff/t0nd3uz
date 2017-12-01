@@ -41,6 +41,9 @@ class MowerProgramParser:
             if ini_pos >= self.__lawn[1] and ini_pos != self.__lawn[1]:
                 raise MowerProgramParseError('initial position for mower #{} can\'t be out of the lawn'.format(i))
 
+            if ini_pos in [m.cur_pos for m in self.__mowers]:
+                raise MowerProgramParseError('initial position for mower #{} collides with another mower'.format(i))
+
             self.__mowers.append(Mower(
                 ini_pos=ini_pos,
                 ini_dir=Dir(mi.group('dir')),
