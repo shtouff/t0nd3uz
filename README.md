@@ -8,7 +8,7 @@
 
 Activate the virtualenv, then:
 
-    (virtualenv) $ pip install -r requirements.txt
+    (virtualenv) $ pip install -r requirements.txt -e .
 
 # run the unit tests
 
