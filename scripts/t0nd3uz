@@ -3,7 +3,7 @@ import sys
 
 import click
 
-from mpparser import MowerProgramParser, MowerProgramParseError
+from t0nd3uz.mpparser import MowerProgramParser, MowerProgramParseError
 
 
 @click.command()

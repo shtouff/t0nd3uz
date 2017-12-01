@@ -1,9 +1,9 @@
 import io
 from unittest import TestCase
 
-from mower import Dir
-from mpparser import MowerProgramParser, MowerProgramParseError
-from point import Point
+from t0nd3uz.mower import Dir
+from t0nd3uz.mpparser import MowerProgramParser, MowerProgramParseError
+from t0nd3uz.point import Point
 
 
 p1 = """3 3

@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from point import Point
+from t0nd3uz.point import Point
 
 
 class PointTestCase(TestCase):
