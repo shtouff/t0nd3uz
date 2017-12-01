@@ -1,9 +1,11 @@
 # run with Docker
 
 Build:
+
     $ docker build . -t t0nd3uz
 
 Then, run:
+
     $ docker run --rm --mount type=bind,source=$PWD/examples/mower.txt,target=/tmp/mower.txt t0nd3uz /tmp/mower.txt
     1 3 N
     5 1 E
