@@ -1,7 +1,7 @@
 from unittest import TestCase
 
-from mower import Mower, Cmd, Dir
-from point import Point
+from t0nd3uz.mower import Mower, Cmd, Dir
+from t0nd3uz.point import Point
 
 
 class MowerTestCase(TestCase):

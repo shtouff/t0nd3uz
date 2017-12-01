@@ -1,8 +1,8 @@
 import io
 import re
 
-from point import Point
-from mower import Mower, Cmd, Dir
+from t0nd3uz.point import Point
+from t0nd3uz.mower import Mower, Cmd, Dir
 
 LAWN_REGEX = re.compile(r'^(?P<x>[0-9]+) (?P<y>[0-9]+)\n$')
 MOWER_INIT_REGEX = re.compile(r'^(?P<x>[0-9]+) (?P<y>[0-9]+) (?P<dir>[NSWE]+)\n$')

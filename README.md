@@ -1,31 +1,40 @@
-# virtualenv
+# run with Docker
 
-   $ python3 -mvenv /some/where
-   $ source /some/where/bin/activate
-   (virtualenv) $
+Build:
+    $ docker build . -t t0nd3uz
 
-# install deps
+Then, run:
+    $ docker run --rm --mount type=bind,source=$PWD/examples/mower.txt,target=/tmp/mower.txt t0nd3uz /tmp/mower.txt
+    1 3 N
+    5 1 E
+
+# development
+
+## virtualenv
+
+    $ python3 -mvenv /some/where
+    $ source /some/where/bin/activate
+    (virtualenv)$
+
+## install deps
 
 Activate the virtualenv, then:
 
-    (virtualenv) $ pip install -r requirements.txt -e .
+    (virtualenv)$ pip install -r requirements.txt -e .
 
-# run the unit tests
+## run the unit tests
 
-    (virtualenv) $ pytest
+    (virtualenv)$ pytest
 
-# run the thing
+## run the thing
 
-```
-(virtualenv) $ cat /tmp/mower.txt
-5 5
-1 2 N
-LFLFLFLFF
-3 3 E
-FFRFFRFRRF
+    (virtualenv)$ cat examples/mower.txt
+    5 5
+    1 2 N
+    LFLFLFLFF
+    3 3 E
+    FFRFFRFRRF
 
-(virtualenv) $ python3 main.py /tmp/mower.txt
-1 3 N
-5 1 E
-```
-
+    (virtualenv)$ t0nd3uz examples/mower.txt
+    1 3 N
+    5 1 E
