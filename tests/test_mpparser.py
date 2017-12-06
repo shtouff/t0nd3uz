@@ -49,6 +49,7 @@ FF
 FF
 """
 
+
 class MowerTestCase(TestCase):
     def test_parser_p1(self):
         parser = MowerProgramParser(stream=io.StringIO(p1))
@@ -103,3 +104,9 @@ class MowerTestCase(TestCase):
             MowerProgramParser(stream=io.StringIO(p8))
 
         self.assertEqual(str(cm.exception), 'initial position for mower #1 collides with another mower')
+
+    def test_parser_binary_file(self):
+        with self.assertRaises(MowerProgramParseError) as cm:
+            MowerProgramParser(stream=open('tests/fixtures/mower-bin.txt', 'r'))
+
+        self.assertEqual(str(cm.exception), 'input data must be unicode-decodable text')

@@ -17,7 +17,10 @@ class MowerProgramParser:
     def __init__(self, stream: io.TextIOBase):
         self.__mowers = []
         stream.seek(0, io.SEEK_SET)
-        cmdlines = stream.readlines()
+        try:
+            cmdlines = stream.readlines()
+        except UnicodeDecodeError:
+            raise MowerProgramParseError('input data must be unicode-decodable text')
 
         m = LAWN_REGEX.match(cmdlines[0])
         if m is None:
